@@ -4,22 +4,10 @@ import LogoutButton from './components/LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UserLandingPage from './components/UserLandingPage';
-import { Grommet } from 'grommet';
-import SidebarNav from './components/SidebarNav';
-import SidebarButton from './components/SideBarButton';
 // import { withStyles } from '@material-ui/core/styles';
 
 function App() {
 	const { isLoading, user } = useAuth0();
-	const theme = {
-		global: {
-			font: {
-				family: 'Arial',
-				size: '14px',
-				height: '20px',
-			},
-		},
-	};
 
 	if (isLoading) return <div> Loading ...</div>;
 	return (
@@ -28,18 +16,20 @@ function App() {
 				<Route
 					path='/'
 					element={
-						<Grommet theme={theme}>
-							<LoginButton /> <LogoutButton />
-						</Grommet>
+						<div className='flex flex-grow bg-gray-800 object-fill h-screen justify-center overflow-hidden'>
+							<div className='flex animate-spin-slow overflow-hidden'>
+								<LoginButton />
+							</div>
+						</div>
 					}
 				/>
 				<Route
 					path='/user'
 					element={
 						<div>
-							<Grommet theme={theme}>
+							<div>
 								<UserLandingPage />
-							</Grommet>
+							</div>
 						</div>
 					}
 				/>
