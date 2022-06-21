@@ -10,7 +10,7 @@ import SidebarButton from './components/SideBarButton';
 // import { withStyles } from '@material-ui/core/styles';
 
 function App() {
-	const { isLoading } = useAuth0();
+	const { isLoading, user } = useAuth0();
 	const theme = {
 		global: {
 			font: {
