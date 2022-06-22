@@ -4,6 +4,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UserHeader from './components/UserHeader';
 import CreateContainer from './components/CreateContainer';
+import CreateEncounterLanding from './components/CreateEncounterLanding';
+import CreatePartyLanding from './components/CreatePartyLanding';
 // import { withStyles } from '@material-ui/core/styles';
 
 function App() {
@@ -38,19 +40,35 @@ function App() {
 				<Route
 					path='/user'
 					element={
-						<div className='flex-column bg-gray-700 w-screen h-screen'>
+						<div className='flex-col bg-gray-700 w-screen h-screen'>
 							<UserHeader />
 							<div className='flex flex-evenly flex-row justify-between h-full'>
 								<div className='flex justify-center w-1/3 '>
 									Current Party and Party List
 								</div>
-								<div className='flex align-self-center  w-1/3'>
+								<div className='flex justify-center w-1/3'>
 									<CreateContainer />
 								</div>
 								<div className='flex justify-center w-1/3'>
 									Remaining Encounters
 								</div>
 							</div>
+						</div>
+					}
+				/>
+				<Route
+					path='/encounter'
+					element={
+						<div className='flex-col bg-gray-700 w-screen h-screen'>
+							<CreateEncounterLanding />
+						</div>
+					}
+				/>
+				<Route
+					path='/party'
+					element={
+						<div className='flex-col bg-gray-700 w-screen h-screen'>
+							<CreatePartyLanding />
 						</div>
 					}
 				/>
