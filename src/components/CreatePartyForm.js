@@ -1,16 +1,10 @@
 import React from 'react';
 
-const EncounterForm = () => {
-	// const handleOnclick(event, data) => {
-	//     event.preventDefault();
-
-	//     //Populate an object with the properties example event.target.name name=(firstname)
-	// }
-
+const CreatePartyForm = () => {
 	return (
 		<div
-			className='flex bg-blue-100 rounded-lg 
-        border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 
+			className='flex self-center w-3/4 bg-blue-300 rounded-lg 
+        border shadow-md md:flex-row  hover:bg-gray-300 
         dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
 			<form className='space-y-4 text-red-700 '>
 				<div className='flex flex-wrap -mx-2 space-y-4 md:space-y-0'>
@@ -92,11 +86,15 @@ const EncounterForm = () => {
 							type='text'
 						/>
 					</div>
-					<button className='flex self-center'>Add Character to Party</button>
+				</div>
+				<div className='flex flex-wrap justify-center -mx-2 space-y-4 md:space-y-0'>
+					<button className='w-1/2 bg-white h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline'>
+						Add Character to Party
+					</button>
 				</div>
 			</form>
 		</div>
 	);
 };
 
-export default EncounterForm;
+export default CreatePartyForm;
