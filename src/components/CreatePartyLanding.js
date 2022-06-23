@@ -9,8 +9,15 @@ const CreatePartyLanding = () => {
 	return (
 		<div className='flex flex-col h-full'>
 			<UserHeader />
-			<div className='flex flex-row h-full items-center'>
-				<div className='flex flex-col  w-1/2 h-full'>
+			<div className='flex aspect-w-13 aspect-h-7 flex-row h-full items-center'>
+				<video autoPlay loop muted className='object-cover	 z-0'>
+					<source
+						src={require('../videos/userLandingSmoke.mp4')}
+						type='video/mp4'
+						className=' z-10'
+					/>
+				</video>
+				<div className='absolute flex-col  w-1/4 h-full'>
 					<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
 						<PartyNameForm />
 					</div>

@@ -42,15 +42,16 @@ function App() {
 					element={
 						<div className='flex-col bg-gray-700 w-screen h-screen'>
 							<UserHeader />
-							<div className='flex flex-evenly flex-row justify-between h-full'>
-								<div className='flex justify-center w-1/3 '>
-									Current Party and Party List
-								</div>
-								<div className='flex justify-center w-1/3'>
+							<div className='flex aspect-w-13 aspect-h-7'>
+								<video autoPlay loop muted className='object-cover	 z-0'>
+									<source
+										src={require('./videos/userLandingSmoke.mp4')}
+										type='video/mp4'
+										className=' z-10'
+									/>
+								</video>
+								<div className='absolute justify-center w-1/3 z-20'>
 									<CreateContainer />
-								</div>
-								<div className='flex justify-center w-1/3'>
-									Remaining Encounters
 								</div>
 							</div>
 						</div>
