@@ -4,7 +4,7 @@ import CreateParty from './CreateParty';
 
 const CreateContainer = () => {
 	return (
-		<div className='flex flex-col justify-center justify-evenly'>
+		<div className='flex flex-col h-full justify-around '>
 			<CreateEncounter />
 			<CreateParty />
 		</div>

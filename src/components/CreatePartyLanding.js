@@ -1,15 +1,25 @@
 import { React, useContext, createContext, useState, setState } from 'react';
+import AltHeader from './AltHeader';
 import CreatePartyForm from './CreatePartyForm';
+import PartyCardList from './PartyCardList';
+import PartyNameCard from './PartyNameCard';
 import { PartyNameForm } from './PartyNameForm';
 import UserHeader from './UserHeader';
 
 const CreatePartyLanding = () => {
-	const [partyName, setPartyName] = useState('');
+	const [characters, setCharacters] = useState([]);
+	const [partyName, setPartyName] = useState(null);
 
+	const addName = (name) => {
+		setPartyName(name);
+	};
+	const addCharacter = (character) => {
+		setCharacters([...characters, character]);
+	};
 	return (
 		<div className='flex flex-col h-full'>
-			<UserHeader />
-			<div className='flex aspect-w-13 aspect-h-7 flex-row h-full items-center'>
+			<AltHeader />
+			<div id='belowHeader' className='flex aspect-w-13 aspect-h-7   h-full '>
 				<video autoPlay loop muted className='object-cover	 z-0'>
 					<source
 						src={require('../videos/userLandingSmoke.mp4')}
@@ -17,16 +27,29 @@ const CreatePartyLanding = () => {
 						className=' z-10'
 					/>
 				</video>
-				<div className='absolute flex-col  w-1/4 h-full'>
-					<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
-						<PartyNameForm />
+				<div id='BothHalves' className='flex flex-row content-start'>
+					<div
+						id='leftHalf'
+						className='flex flex-col  w-1/2 h-full order-first'>
+						{partyName === null ? (
+							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
+								<PartyNameForm addName={addName} />
+							</div>
+						) : (
+							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
+								<PartyNameCard partyName={partyName} />
+							</div>
+						)}
+
+						<div className='flex flex-col h-full justify-center self-center w-full'>
+							<CreatePartyForm addCharacter={addCharacter} />
+						</div>
 					</div>
-					<div className='flex flex-col h-full justify-center self-center w-full'>
-						<CreatePartyForm />
+					<div
+						id='rightHalf'
+						className='flex flex-start items-center w-1/2 h-full order-last'>
+						<PartyCardList characters={characters} />
 					</div>
-				</div>
-				<div className='flex self-center justify-center w-1/2'>
-					<div>{partyName}</div>
 				</div>
 			</div>
 		</div>

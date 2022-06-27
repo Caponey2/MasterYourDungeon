@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreateEncounter = () => {
 	return (
-		<div className='self-center'>
+		<div className='flex '>
 			<a
 				href='http://localhost:3000/encounter'
 				className='flex flex-col items-center bg-blue-100 rounded-lg border shadow-md 

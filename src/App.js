@@ -6,6 +6,7 @@ import UserHeader from './components/UserHeader';
 import CreateContainer from './components/CreateContainer';
 import CreateEncounterLanding from './components/CreateEncounterLanding';
 import CreatePartyLanding from './components/CreatePartyLanding';
+import AltHeader from './components/AltHeader';
 // import { withStyles } from '@material-ui/core/styles';
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
 					path='/user'
 					element={
 						<div className='flex-col bg-gray-700 w-screen h-screen'>
-							<UserHeader />
+							<AltHeader />
 							<div className='flex aspect-w-13 aspect-h-7'>
 								<video autoPlay loop muted className='object-cover	 z-0'>
 									<source
@@ -50,7 +51,7 @@ function App() {
 										className=' z-10'
 									/>
 								</video>
-								<div className='absolute justify-center w-1/3 z-20'>
+								<div className='flex justify-center items-center  z-20'>
 									<CreateContainer />
 								</div>
 							</div>

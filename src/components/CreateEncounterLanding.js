@@ -1,10 +1,11 @@
 import React from 'react';
+import AltHeader from './AltHeader';
 import UserHeader from './UserHeader';
 
 const CreateEncounterLanding = () => {
 	return (
 		<div className='flex flex-col h-full'>
-			<UserHeader />
+			<AltHeader />
 			<div className='flex flex-row h-full items-center'>
 				<div className='flex flex-col w-1/2'>
 					<div className='flex justify-center self-center'>

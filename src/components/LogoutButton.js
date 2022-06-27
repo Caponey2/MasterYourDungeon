@@ -6,7 +6,9 @@ const LogoutButton = () => {
 
 	return (
 		isAuthenticated && (
-			<button className='text-5xl' onClick={() => logout()}>
+			<button
+				className=' hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+				onClick={() => logout()}>
 				<p>Flee through the portal</p>
 			</button>
 		)
