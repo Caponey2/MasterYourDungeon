@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const PartyNameForm = ({ addName }) => {
 	const [partyName, setPartyName] = useState({

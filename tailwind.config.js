@@ -6,6 +6,7 @@ module.exports = {
 			animation: {
 				'spin-slow': 'spin 10s linear infinite',
 			},
+			keyframes: {},
 		},
 	},
 	plugins: [require('@tailwindcss/aspect-ratio')],

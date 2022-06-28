@@ -19,7 +19,9 @@ const PartyNameCard = ({ partyName }) => {
 					Party Name
 				</label>
 				{loaded ? (
-					<p className='flex block mb-1 h-1/2 text-xl'>{partyName}</p>
+					<p className='flex self-center justify-self-center block mb-1 h-1/2 text-6xl'>
+						{partyName}
+					</p>
 				) : (
 					<p className='flex block mb-1 h-1/2 '></p>
 				)}

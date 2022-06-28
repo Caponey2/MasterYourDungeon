@@ -7,6 +7,7 @@ import CreateContainer from './components/CreateContainer';
 import CreateEncounterLanding from './components/CreateEncounterLanding';
 import CreatePartyLanding from './components/CreatePartyLanding';
 import AltHeader from './components/AltHeader';
+import { SmokeyText } from './components/SmokeyText';
 // import { withStyles } from '@material-ui/core/styles';
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
 								</video>
 								<div className='absolute  justify-center items-center animate-spin-slow overflow-hidden z-20'>
 									<LoginButton />
+								</div>
+								<div className='absolute  h-full'>
+									<SmokeyText />
 								</div>
 							</div>
 						</div>

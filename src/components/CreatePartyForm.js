@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CreatePartyForm = ({ addCharacter }) => {
 	const [party, setParty] = useState('');
 	const [characters, setCharacters] = useState([]);
+	const [characterCount, setCharacterCount] = useState(0);
 	const [character, setCharacter] = useState({
 		PFName: '',
 		PLName: '',
@@ -12,7 +13,13 @@ const CreatePartyForm = ({ addCharacter }) => {
 		class: '',
 		level: null,
 	});
+	const [canClick, setCanClick] = useState(true);
 
+	useEffect(() => {
+		if (characterCount >= 4) {
+			setCanClick(false);
+		}
+	}, [characterCount]);
 	const handleChange = (e) => {
 		setCharacter({ ...character, [e.target.name]: e.target.value });
 	};
@@ -29,6 +36,12 @@ const CreatePartyForm = ({ addCharacter }) => {
 			class: '',
 			level: null,
 		});
+		setCharacterCount(characterCount + 1);
+	};
+
+	const tooMany = (e) => {
+		e.preventDefault();
+		alert('No more than 6 characters in a party currently supported ');
 	};
 
 	return (
@@ -122,7 +135,7 @@ const CreatePartyForm = ({ addCharacter }) => {
 							<option>Ranger</option>
 							<option>Rogue</option>
 							<option>Sorceror</option>
-							<option>Warloc</option>
+							<option>Warlock</option>
 							<option>Wizard</option>
 						</select>
 					</div>
@@ -139,7 +152,7 @@ const CreatePartyForm = ({ addCharacter }) => {
 				</div>
 				<div className='flex flex-wrap justify-center -mx-2 space-y-4 md:space-y-0'>
 					<button
-						onClick={(e) => handleSubmit(e)}
+						onClick={canClick ? (e) => handleSubmit(e) : (e) => tooMany(e)}
 						className='w-1/2 bg-white h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline'>
 						Add Character to Party
 					</button>

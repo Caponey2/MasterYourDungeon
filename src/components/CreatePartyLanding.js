@@ -16,6 +16,7 @@ const CreatePartyLanding = () => {
 	const addCharacter = (character) => {
 		setCharacters([...characters, character]);
 	};
+
 	return (
 		<div className='flex flex-col h-full'>
 			<AltHeader />
@@ -33,7 +34,11 @@ const CreatePartyLanding = () => {
 						className='flex flex-col  w-1/2 h-full order-first'>
 						{partyName === null ? (
 							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
-								<PartyNameForm addName={addName} />
+								{partyName !== null ? (
+									<h1> {partyName} </h1>
+								) : (
+									<PartyNameForm addName={addName} />
+								)}
 							</div>
 						) : (
 							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
