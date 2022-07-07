@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
+import { PartiesContext } from '../App';
 
 export const PartyNameForm = ({ addName }) => {
 	const [partyName, setPartyName] = useState({
 		name: '',
 	});
+	const { updateParty, addParty } = useContext(PartiesContext) || undefined;
+	// const updateParty = updateParty;
+	// const addParty = addParty;
 
 	const handleChange = (e) => {
 		setPartyName(e.target.value);
@@ -11,6 +15,8 @@ export const PartyNameForm = ({ addName }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addName(partyName);
+		updateParty(partyName);
+		addParty(partyName);
 		setPartyName({
 			name: '',
 		});

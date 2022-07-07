@@ -5,7 +5,7 @@ export const SmokeyText = () => {
 		<div className='flex  h-full '>
 			<div className='grid grid-rows-6'>
 				<div className='grid row-start-5'>
-					<body className=' overflow text-4xl text-white '>
+					<body className='smoky-text'>
 						<span className='drop-shadow '>C</span>
 						<span className='drop-shadow'>L</span>
 						<span className='drop-shadow'>I</span>

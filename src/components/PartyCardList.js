@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+//import fs from 'fs';
 
 const PartyCardList = ({ characters }) => {
 	const [loaded, setLoaded] = useState(false);
@@ -8,6 +9,16 @@ const PartyCardList = ({ characters }) => {
 			setLoaded(true);
 		}
 	}, [characters]);
+
+	const tryRequire = (character) => {
+		try {
+			//console.log();
+			return require(`../images/${character.race}-${character.class}.png`);
+		} catch (err) {
+			console.log(err);
+			return require('../images/pngfind.com-dnd-logo-png-3863446.png');
+		}
+	};
 
 	return (
 		<div id='cardWrapper' className='grid space-x-2 lg:grid-cols-3'>
@@ -31,7 +42,7 @@ const PartyCardList = ({ characters }) => {
 											target='_blank'
 											rel='noreferrer noopener'>
 											<img
-												src={require(`../images/${character.race}-${character.class}.png`)}
+												src={tryRequire(character)}
 												alt='EasyCode'
 												className='flex max-h-[200px]'
 											/>

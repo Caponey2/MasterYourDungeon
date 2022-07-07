@@ -1,6 +1,5 @@
 import React from 'react';
 import AltHeader from './AltHeader';
-import UserHeader from './UserHeader';
 
 const CreateEncounterLanding = () => {
 	return (

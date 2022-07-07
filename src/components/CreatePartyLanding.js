@@ -1,10 +1,10 @@
-import { React, useContext, createContext, useState, setState } from 'react';
+import { React, useState } from 'react';
 import AltHeader from './AltHeader';
 import CreatePartyForm from './CreatePartyForm';
 import PartyCardList from './PartyCardList';
 import PartyNameCard from './PartyNameCard';
 import { PartyNameForm } from './PartyNameForm';
-import UserHeader from './UserHeader';
+import SavePartyButton from './SavePartyButton';
 
 const CreatePartyLanding = () => {
 	const [characters, setCharacters] = useState([]);
@@ -33,7 +33,9 @@ const CreatePartyLanding = () => {
 						id='leftHalf'
 						className='flex flex-col  w-1/2 h-full order-first'>
 						{partyName === null ? (
-							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
+							<div
+								className='flex flex-col  h-1/4 justify-center self-center w-full'
+								id='PartyNameForm'>
 								{partyName !== null ? (
 									<h1> {partyName} </h1>
 								) : (
@@ -41,13 +43,22 @@ const CreatePartyLanding = () => {
 								)}
 							</div>
 						) : (
-							<div className='flex flex-col  h-1/4 justify-center self-center w-full'>
+							<div
+								className='flex flex-col  h-1/4 justify-center self-center w-full'
+								id='PartyNameForm'>
 								<PartyNameCard partyName={partyName} />
 							</div>
 						)}
 
-						<div className='flex flex-col h-full justify-center self-center w-full'>
+						<div
+							className='flex flex-col h-full justify-center self-center w-full'
+							id='CharacterForm'>
 							<CreatePartyForm addCharacter={addCharacter} />
+						</div>
+						<div
+							className='flex flex-col h-full justify-center self-center w-full'
+							id='SavePartyButton'>
+							<SavePartyButton />
 						</div>
 					</div>
 					<div

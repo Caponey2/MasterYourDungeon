@@ -1,8 +1,8 @@
 import React from 'react';
-import LogoutButton from './LogoutButton.js';
-import Profile from './Profile.js';
+import LogoutButton from './LogoutButton';
+//import Profile from './Profile.js';
 import { useAuth0 } from '@auth0/auth0-react';
-import UserButton from './UserButton.js';
+import UserButton from './UserButton';
 
 const UserHeader = () => {
 	const { user } = useAuth0();
