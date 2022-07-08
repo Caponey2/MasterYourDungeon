@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 //import fs from 'fs';
 
 const PartyCardList = ({ characters }) => {
@@ -25,7 +26,13 @@ const PartyCardList = ({ characters }) => {
 			{loaded === true
 				? characters.map((character, index) => {
 						return (
-							<div id='card' className='flex h-full max-w-1/3 relative'>
+							<div
+								id='card'
+								className='flex h-full max-w-1/3 relative fade-in-card py-4 px-2'>
+								<ReactAudioPlayer
+									src={require('../audio/zapsplat_warfare_sword_blade_single_slice_ground_small_stones_002_78297.mp3')}
+									autoPlay
+								/>
 								<div
 									id='partnerCard'
 									className='bg-[#1c1c1c] text-gray-50 overflow-hidden rounded-md  flex flex-col'>
@@ -35,7 +42,7 @@ const PartyCardList = ({ characters }) => {
 										</h3>
 									</div>
 
-									<div class='flex items-center justify-center bg-[#2a2a2a] min-h-[200px]'>
+									<div class='flex items-center justify-center bg-[#2a2a2a] min-h-[200px] max-w-[240px]'>
 										<a
 											className='flex items-center justify-center'
 											href='http://localhost:3000/user'
@@ -44,7 +51,7 @@ const PartyCardList = ({ characters }) => {
 											<img
 												src={tryRequire(character)}
 												alt='EasyCode'
-												className='flex max-h-[200px]'
+												className='flex max-h-[200px] max-w-[200]'
 											/>
 										</a>
 									</div>

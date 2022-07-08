@@ -18,17 +18,17 @@ const AltHeader = () => {
 							<div className='hidden md:block'>
 								<div className='ml-10 flex items-baseline space-x-4'>
 									<a
-										href='http://localhost:3000/user'
+										href='http://localhost:8080/user'
 										className=' hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
 										Tanner's Home
 									</a>
 									<a
-										href='http://localhost:3000/party'
+										href='http://localhost:8080/party'
 										className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
 										Create Party
 									</a>
 									<a
-										href='http://localhost:3000/encounter'
+										href='http://localhost:8080/encounter'
 										className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
 										Create Encounter
 									</a>

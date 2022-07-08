@@ -8,6 +8,7 @@ import CreatePartyLanding from './components/CreatePartyLanding';
 import AltHeader from './components/AltHeader';
 import { SmokeyText } from './components/SmokeyText';
 import React, { useState, createContext } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 // import { withStyles } from '@material-ui/core/styles';
 export const PartiesContext = createContext();
 function App() {
@@ -36,6 +37,10 @@ function App() {
 						path='/'
 						element={
 							<div className='flex flex-grow bg-gray-800 w-screen h-screen  overflow-hidden'>
+								<ReactAudioPlayer
+									src={require('./audio/318_The_Gaping_Maw.mp3')}
+									autoPlay
+								/>
 								<div className='flex justify-center w-auto min-w-full min-h-full'>
 									<video
 										autoPlay
@@ -62,6 +67,10 @@ function App() {
 						path='/user'
 						element={
 							<div className='flex-col bg-gray-700 w-screen h-screen'>
+								<ReactAudioPlayer
+									src={require('./audio/318_The_Gaping_Maw.mp3')}
+									autoPlay
+								/>
 								<AltHeader />
 								<div className='flex aspect-w-13 aspect-h-7'>
 									<video autoPlay loop muted className='object-cover	 z-0'>
@@ -71,11 +80,11 @@ function App() {
 											className=' z-10'
 										/>
 									</video>
-									<div className='text-white text-5xl'>Downstream Features</div>
+									{/* <div className='text-white text-5xl'>Downstream Features</div> */}
 									<div className='flex justify-center items-center  z-20'>
 										<CreateContainer />
 									</div>
-									<div className='text-white text-5xl'>Upcoming Features</div>
+									{/* <div className='text-white text-5xl'>Upcoming Features</div> */}
 								</div>
 							</div>
 						}
@@ -92,6 +101,10 @@ function App() {
 						path='/party'
 						element={
 							<div className='flex-col bg-gray-700 w-screen h-screen'>
+								<ReactAudioPlayer
+									src={require('./audio/318_The_Gaping_Maw.mp3')}
+									autoPlay
+								/>
 								<CreatePartyLanding />
 							</div>
 						}

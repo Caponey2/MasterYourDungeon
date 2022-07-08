@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Auth0Provider } from '@auth0/auth0-react';
+import ReactAudioPlayer from 'react-audio-player';
 // require('dotenv').config();
 // const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 // const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -15,6 +16,11 @@ root.render(
 		domain={domain}
 		clientId={clientId}
 		redirectUri='http://localhost:8080/user'>
+		{/* <ReactAudioPlayer
+			src={require('./audio/318_The_Gaping_Maw.mp3')}
+			autoPlay
+			controls
+		/> */}
 		<App />
 	</Auth0Provider>
 );
