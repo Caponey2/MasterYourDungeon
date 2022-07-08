@@ -5,14 +5,12 @@ const LoginButton = () => {
 	const { loginWithRedirect, isAuthenticated } = useAuth0();
 
 	return (
-		!isAuthenticated && (
-			<button onClick={() => loginWithRedirect()}>
-				<img
-					src={require('../images/pinpng.com-portal-png-494723.png')}
-					alt='Enter Within'
-				/>
-			</button>
-		)
+		<button onClick={() => loginWithRedirect()}>
+			<img
+				src={require('../images/pinpng.com-portal-png-494723.png')}
+				alt='Enter Within'
+			/>
+		</button>
 	);
 };
 

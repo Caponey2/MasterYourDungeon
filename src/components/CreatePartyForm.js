@@ -12,11 +12,13 @@ const CreatePartyForm = ({ addCharacter }) => {
 		race: '',
 		class: '',
 		level: null,
+		hp: '',
+		ac: '',
 	});
 	const [canClick, setCanClick] = useState(true);
 
 	useEffect(() => {
-		if (characterCount >= 4) {
+		if (characterCount >= 6) {
 			setCanClick(false);
 		}
 	}, [characterCount]);
@@ -35,12 +37,25 @@ const CreatePartyForm = ({ addCharacter }) => {
 			race: '',
 			class: '',
 			level: null,
+			hp: '',
+			ac: '',
 		});
 		setCharacterCount(characterCount + 1);
 	};
 
 	const tooMany = (e) => {
 		e.preventDefault();
+		setCharacter({
+			PFName: '',
+			PLName: '',
+			CFName: '',
+			CLName: '',
+			race: '',
+			class: '',
+			level: null,
+			hp: '',
+			ac: '',
+		});
 		alert('No more than 6 characters in a party currently supported ');
 	};
 
@@ -146,6 +161,28 @@ const CreatePartyForm = ({ addCharacter }) => {
 							type='text'
 							name='level'
 							value={character.level}
+							onChange={handleChange}
+						/>
+					</div>
+				</div>
+				<div className='flex flex-wrap -mx-2 space-y-4 md:space-y-0'>
+					<div className='w-full px-2 md:w-1/2'>
+						<label className='block mb-1'>AC</label>
+						<input
+							className='w-full h-10 px-3 text-base placeholder-gray-600 border
+						rounded-lg focus:shadow-outline'
+							name='ac'
+							value={character.ac}
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='w-full px-2 md:w-1/2'>
+						<label className='block mb-1'>HP</label>
+						<input
+							className='w-full h-10 px-3 text-base placeholder-gray-600 border
+						rounded-lg focus:shadow-outline'
+							name='hp'
+							value={character.hp}
 							onChange={handleChange}
 						/>
 					</div>
