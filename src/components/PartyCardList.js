@@ -64,8 +64,9 @@ const PartyCardList = ({ characters }) => {
 												{' '}
 												Level: {character.level}
 											</p>
+											<p className='font-bold'>Player:</p>
 											<p className='font-bold'>
-												Player: {character.PFName + ' ' + character.PLName}{' '}
+												{character.PFName + ' ' + character.PLName}{' '}
 											</p>
 										</div>
 										<div className='col-span-1 pt-4'>
